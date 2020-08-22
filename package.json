@@ -6,8 +6,12 @@
     "build": "tsc && vite build"
   },
   "dependencies": {
+    "@chakra-ui/core": "^0.8.0",
+    "@emotion/core": "^10.0.35",
+    "@emotion/styled": "^10.0.27",
     "@pika/react": "^16.13.1",
-    "@pika/react-dom": "^16.13.1"
+    "@pika/react-dom": "^16.13.1",
+    "emotion-theming": "^10.0.27"
   },
   "devDependencies": {
     "@types/react": "^16.9.35",
