@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Input, Button } from '@chakra-ui/core';
+import { Input, Button, Box } from '@chakra-ui/core';
 
 export interface Props {
   onSearch: (searchTerm: string) => void;
@@ -16,17 +16,20 @@ export function Search({ onSearch }: Props) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <Box as="form" onSubmit={handleSubmit} d="flex" p={16}>
       <Input
         type="text"
         value={searchTerm}
-        onChange={(event: React.FormEvent<HTMLInputElement>) =>
+        onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
           setSearchTerm(event.target.value)
         }
+        placeholder="Search movies by name..."
+        mb={5}
+        isFullWidth
       />
-      <Button type="submit" size="md">
+      <Button type="submit" size="md" bg="teal.500" color="white">
         Search
       </Button>
-    </form>
+    </Box>
   );
 }

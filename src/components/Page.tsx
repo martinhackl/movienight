@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Flex, Box, SimpleGrid } from '@chakra-ui/core';
+import { Box } from '@chakra-ui/core';
 import { Movie as MovieModel } from '../models/Movie';
 import { Header } from './Header';
 import { Search } from './Search';
-import { Movie } from './Movie';
+import { Movies } from './Movies';
 
 const MOVIE_API_URL = `http://www.omdbapi.com/?apikey=${
   import.meta.env.VITE_API_KEY
@@ -23,17 +23,10 @@ export default function Page() {
   const handleSearch = () => {};
 
   return (
-    <Box>
+    <Box w="100vw" h="100vh">
       <Header />
-      <Box>
-        <Search onSearch={handleSearch} />
-      </Box>
-      <Flex direction={{ base: 'column', lg: 'row' }}>
-        {movies?.length > 0 &&
-          movies.map((movie, index) => (
-            <Movie key={`${index}-${movie.Title}`} movie={movie} />
-          ))}
-      </Flex>
+      <Search onSearch={handleSearch} />
+      <Movies movies={movies} />
     </Box>
   );
 }
