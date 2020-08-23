@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box } from '@chakra-ui/core';
+import { Flex, Box, SimpleGrid } from '@chakra-ui/core';
 import { Movie as MovieModel } from '../models/Movie';
 import { Header } from './Header';
 import { Search } from './Search';
@@ -23,13 +23,17 @@ export default function Page() {
   const handleSearch = () => {};
 
   return (
-    <Box w="90%">
+    <Box>
       <Header />
-      <Search onSearch={handleSearch} />
-      {movies?.length > 0 &&
-        movies.map((movie, index) => (
-          <Movie key={`${index}-${movie.Title}`} movie={movie} />
-        ))}
+      <Box>
+        <Search onSearch={handleSearch} />
+      </Box>
+      <Flex direction={{ base: 'column', lg: 'row' }}>
+        {movies?.length > 0 &&
+          movies.map((movie, index) => (
+            <Movie key={`${index}-${movie.Title}`} movie={movie} />
+          ))}
+      </Flex>
     </Box>
   );
 }

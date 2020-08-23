@@ -15,9 +15,11 @@ export function Movie({ movie }: Props) {
 
   return (
     <Box>
-      <Image src={posterUrl} />
-      <Box>{movie.Title}</Box>
-      <Box>{movie.Year}</Box>
+      <Image src={posterUrl} w="100%" />
+      <Box p="0.2rem">
+        <Box>{movie.Title}</Box>
+        <Box>{movie.Year}</Box>
+      </Box>
     </Box>
   );
 }
