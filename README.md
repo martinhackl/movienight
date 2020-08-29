@@ -8,3 +8,10 @@ This is a sample application featuring the following tech stack:
 - Chakra UI [https://chakra-ui.com/]
 - Vite [https://github.com/vitejs/vite]
 - Typescript [https://www.typescriptlang.org/]
+
+## Run the app
+
+```
+> yarn install
+> yarn dev
+```
